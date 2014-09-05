@@ -1,0 +1,32 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+
+\renewcommand{\P}{\mathbb{P}}
+
+\title{Homework 1}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 1.1}
+
+Let $\mu(x) = \P(X_0 = x)$.
+
+Base Case: The distribution of $X_0$ is characterized as $mu$ as definition.
+
+Inductive step: Assume that for some $n \geq 0$, $\P(X_n = x)$ can be
+represented with $P$ and $\mu$. $\P(X_{n+1} = y) = \P(X_n = x) \P(X_{n+1} = y |
+X_n = x) = \P(X_n = x) P(x, y)$.
+
+\section*{Exercise 1.2}
+
+$\P(X_1 = y) = \sum_{x \in \Omega} \P(X_1 = y | X_0 = x) P(X_0 = x) = \sum_{x
+\in \Omega} P(x, y) P(X_0 = x)$.
+
+\end{document}
