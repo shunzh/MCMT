@@ -1,2 +1,1 @@
-all:
-	pdflatex report.tex
+../Makefile
