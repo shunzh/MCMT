@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+
+\renewcommand{\P}{\mathbb{P}}
+
+\title{MCMT Homework 2}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 2.1}
+
+Let $Z$ be a uniform random variable on $[0, 1]$. Let $Z_1, Z_2, \cdots$ to be
+independent copies of $Z$.
+
+Define $f(x_t, z_t) = y$ iff $\sum_{i=1}^{y-1} P(x_t, i) \leq z_t <
+\sum_{i=1}^{y} P(x_t, i)$ (assume that $\sum_{i=1}^0 \cdot = 0$).
+
+Then $\P(X_{t+1} = y | X_t = x) = P(x, y) = \P(f(x, z_t) = y)$.
+
+\section*{Exercise 2.2}
+
+No. Assume there are only two distinct distributions $\pi_1$ and $\pi_2$, so
+that $\pi_1 P = \pi_1$, $\pi_2 P = \pi_2$. Then for $0 < \lambda < 1$, consider
+the distribution $\pi = \lambda \pi_1 + (1 - \lambda) \pi_2$. $(\lambda \pi_1 +
+(1 - \lambda) \pi_2) P = \lambda \pi_1 + (1 - \lambda) \pi_2$. So $\pi P = \pi$.
+Contradiction.
+
+\end{document}
