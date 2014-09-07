@@ -1,0 +1,76 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+
+\renewcommand{\P}{\mathbb{P}}
+
+\title{MCMT Homework 1}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 1.1}
+
+Let $\mu(x) = \P(X_0 = x)$.
+
+Base Case: The distribution of $X_0$ is characterized as $\mu$ as definition.
+
+Inductive step: Assume that for some $n \geq 0$, $\P(X_n = x)$ can be
+represented with $P$ and $\mu$. $\P(X_{n+1} = y) = \P(X_n = x) \P(X_{n+1} = y |
+X_n = x) = \P(X_n = x) P(x, y)$. We already know that $\P(X_n = x)$ can be
+represented with $P$ and $\mu$. So $\P(X_{n+1} = y)$ can also be represented
+using $P$ and $\mu$.
+
+\section*{Exercise 1.2}
+
+$\P(X_1 = y)
+= \sum_{x \in \Omega} \P(X_1 = y | X_0 = x) P(X_0 = x)
+= \sum_{x \in \Omega} P(x, y) P(X_0 = x)
+= \sum_{x \in \Omega} P_{xy} \mu_x
+= \begin{pmatrix}
+  \mu_1 & \mu_2 & \cdots & \mu_k
+  \end{pmatrix}
+  \begin{pmatrix}
+  P_{1y} \\
+  P_{2y} \\
+  \cdots \\
+  P_{ky}
+  \end{pmatrix}
+$.
+
+The distribution of $X_1$ is $(\P(X_1 = 1), \cdots, \P(X_1 = k))
+= \begin{pmatrix}
+  \mu_1 & \mu_2 & \cdots & \mu_k
+  \end{pmatrix}
+  \begin{pmatrix}
+  P_{11} & \cdots & P_{1k} \\
+  P_{21} & \cdots & P_{2k} \\
+  \cdots \\
+  P_{ky} & \cdots & P_{kk} \\
+  \end{pmatrix}
+= \mu P
+$.
+
+To show the distribution of $X_t$ is $\mu P^t$ by way of induction. the base
+case is shown above. Assume for some $n > 0$, the distribution of $X_n$ is  $\mu
+P^n$, consider the distribution of $X_{n+1}$.
+
+$\P(X_{n+1} = y) 
+= \sum_{x \in \Omega} \P(X_{n+1} = y | X_n = x) P(X_n = x)
+$. Similar to the reasoning in the base case, this is
+$ \mu P^n
+  \begin{pmatrix}
+  P_{1y} \\
+  P_{2y} \\
+  \cdots \\
+  P_{ky}
+  \end{pmatrix}
+$. So the distribution of $X_{n+1}$ is $\mu P^n P = \mu P^{n+1}$.
+
+\end{document}

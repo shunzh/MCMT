@@ -1,2 +1,2 @@
 all:
-	pdflatex hw1.tex
+	pdflatex report.tex
