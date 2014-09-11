@@ -18,14 +18,16 @@
 \section*{Exercise 3.1}
 
 Assume that $\pi(x) = 0$ for a $x \in \Omega$. Because $\pi P = \pi$, $\sum_{i
-\in \Omega} \pi(i) P(i, x) = \pi(x) = 0$.  So $\pi(i) P(i, x) = 0$ for all the
-states $i$. So there is 0 probability for nodes other than $i$ to access x.
-This chain is not irreducible. Contradiction.
+\in \Omega} \pi(i) P(i, x) = \pi(x) = 0$. Consider state $y$ such that $\pi(y) >
+0$, then $P(y, x) = 0$. Because $\pi$ is the stationary distribution for $P$, so
+$\pi P^t = \pi$, or $P^t = P$, for arbitrary $t \geq 1$. So $P^t(y, x) = 0$ for
+arbitrary $t \geq 1$. This chain is not irreducible. Contradiction.
 
 \section*{Exercise 3.2}
 
-$\pi P_x = \sum_{i \in adj(x)} \dfrac{deg(i)}{2|E|} \dfrac{1}{deg(i)}
-= \sum_{i \in adj(x)} \dfrac{1}{2|E|}
+Check the distribution at state $x$,
+$\pi P_x = \sum_{i \in adj(x)} \pi(i) P(i, x) = \sum_{i \in adj(x)}
+\dfrac{deg(i)}{2|E|} \dfrac{1}{deg(i)} = \sum_{i \in adj(x)} \dfrac{1}{2|E|}
 = \dfrac{deg(x)}{2|E|}
 = \pi(x)
 $, where $adj(x)$ is the neighbor set of $x$, with the size of $deg(x)$.
