@@ -33,12 +33,14 @@ $
 
 \section*{Exercise 4.2}
 
-If $y \in \Omega(x, v)$,
+Define $V_1 = \{v \in V: y \in \Omega(x, v)\}$. Define $V_2 = V \setminus V_1$.
+Then consider the transition from $x$ to $y$, for arbitrary $x, y \in \Omega$.
 
 $\pi(x) P(x, y) \\
 = \pi(x) \dfrac{1}{|V|} \sum_v \pi^{x, v}(y) \\
-= \pi(x) \dfrac{1}{|V|} \sum_v \dfrac{\pi(y)}{\pi(\Omega(x, v))} \\
-= \pi(x) \dfrac{1}{|V|} \sum_v \dfrac{\pi(y)}{\pi(\Omega(y, v))} \\
+= \pi(x) \dfrac{1}{|V|} \sum_{v \in V_1} \dfrac{\pi(y)}{\pi(\Omega(x, v))} +
+\sum_{v \in V_2} 0\\
+= \pi(x) \dfrac{1}{|V|} \sum_{v \in V_1} \dfrac{\pi(y)}{\pi(\Omega(y, v))} \\
 = \pi(y) \dfrac{1}{|V|} \sum_v \dfrac{\pi(x)}{\pi(\Omega(y, v))} \\
 = \pi(y) \dfrac{1}{|V|} \sum_v \pi^{y, v}(x) \\
 = \pi(y) P(y, x)
