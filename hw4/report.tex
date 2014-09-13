@@ -33,17 +33,30 @@ $
 
 \section*{Exercise 4.2}
 
-Define $V_1 = \{v \in V: y \in \Omega(x, v)\}$. Define $V_2 = V \setminus V_1$.
-Then consider the transition from $x$ to $y$, for arbitrary $x, y \in \Omega$.
+Consider the transition from $x$ to $y$, for arbitrary $x, y \in \Omega$.
+
+Define $V_1 = \{v \in V: y \in \Omega(x, v)\}$, and $V_2 = V \setminus V_1$. For
+$v \in V_1$, or equivalently $y \in \Omega(x, v)$, $x(u) = y(u)$ for all $u
+\neq v$. This is equivalent to say $x \in \Omega(y, v)$. So $\Omega(x, v) =
+\Omega(y, v)$.
 
 $\pi(x) P(x, y) \\
-= \pi(x) \dfrac{1}{|V|} \sum_v \pi^{x, v}(y) \\
-= \pi(x) \dfrac{1}{|V|} \sum_{v \in V_1} \dfrac{\pi(y)}{\pi(\Omega(x, v))} +
-\sum_{v \in V_2} 0\\
-= \pi(x) \dfrac{1}{|V|} \sum_{v \in V_1} \dfrac{\pi(y)}{\pi(\Omega(y, v))} \\
-= \pi(y) \dfrac{1}{|V|} \sum_v \dfrac{\pi(x)}{\pi(\Omega(y, v))} \\
-= \pi(y) \dfrac{1}{|V|} \sum_v \pi^{y, v}(x) \\
+= \pi(x) \dfrac{1}{|V|} \sum_v \mu^{x, v}(y)
+\hfill \text{$v$ is chosen uniformly random} \\
+= \pi(x) \dfrac{1}{|V|} (\sum_{v \in V_1} \dfrac{\pi(y)}{\pi(\Omega(x, v))} +
+\sum_{v \in V_2} 0) \\
+= \pi(x) \dfrac{1}{|V|} \sum_{v \in V_1} \dfrac{\pi(y)}{\pi(\Omega(y, v))}
+\hfill \Omega(x, v) = \Omega(y, v) \\
+= \pi(y) \dfrac{1}{|V|} \sum_{v \in V_1} \dfrac{\pi(x)}{\pi(\Omega(y, v))} \\
+= \pi(y) \dfrac{1}{|V|} (\sum_{v \in V_1} \dfrac{\pi(x)}{\pi(\Omega(y, v))} +
+\sum_{v \in V_2} 0) \\
+= \pi(y) \dfrac{1}{|V|} \sum_v \mu^{y, v}(x)
+\hfill \{v \in V: y \in \Omega(x, v)\} = \{v \in V: x \in \Omega(y, v)\} \\
 = \pi(y) P(y, x)
 $
+
+So the detailed balance holds for arbirary $x, y$. It is reversible. From a
+previous theorem that if $P$ is reversible, then $P$ is stationary. We also know
+that $P$ is stationary.
 
 \end{document}
