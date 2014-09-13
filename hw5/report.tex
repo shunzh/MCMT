@@ -20,14 +20,22 @@
 From Exercise 3.1, we know that $\pi$ is fully supported, i.e., $\pi(x) > 0$
 for all $x$.
 
-To show that $\delta_x P^t$ is not fully supported for any $t \geq 0$ by
-induction.
+Assume that $\delta_x P^t$ converges to $\pi$ for some $t > 1$. Then $\delta_x
+P^t = \delta_x P^{t+1} = \pi$ by the definition of stationary distribution.
 
-Base case: $\delta_x$ has only support of 1. So $\delta_x P^0 = \delta_x$ is not
-fully supported.
+Because $\pi$ is fully supported, $\pi(x) > 0$. So $\delta_x P^t (x) = \delta_x
+P^{t+1} (x) > 0$. This means that $P^t(x, x) > 0$ and $P^{t+1}(x, x) > 0$. So
+$t, t+1 \in T(x)$. But $gcd(t, t+1) = 1$. So $T(x) = 1$. This controdicts with
+the fact that $T(x) > 1$.
 
-Inductive step: assume that for some $t \geq 0$, $\delta_x P^t$ is not fully
-supported. Want to show that $\delta_x P^{t+1}$ is not fully supported either.
-Consider state $y$ such that
+\section*{Exercise 5.2}
+
+For arbitrary $x, y \in \tilde{\Omega}$, by its definition, $\tilde{P}^t(x, y) > 0$
+for some $t \geq 1$. So $\tilde{P}$ is irreducible.
+
+For arbitrary $x \in \tilde{\Omega}$, we know $x \in \Omega$. Because $P$ has
+the period of $d$, $P^d(x, x) > 0$ by definition. Because $\tilde{P} = P^d$,
+$\tilde{P}(x, x) > 0$. So $1 \in T(x)$ in terms of $\tilde{P}$. So $\tilde{P}$
+has the period of 1, and is aperiodic.
 
 \end{document}
