@@ -1,0 +1,39 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+
+\renewcommand{\P}{\mathbb{P}}
+
+\title{MCMT Homework 5}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 6.1}
+
+\begin{multline*}
+2 ||\mu P^t - \pi||_{TV} 
+= \sum_{y \in \Omega} |\mu P^t(y) - \pi (y)| \\
+= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \sum_{z \in
+\Omega}\pi (z) P^t(z, y)| \\
+= \sum_{y \in \Omega} |\sum_{z \in \Omega}\pi (z) (\sum_{x \in \Omega}\mu(x)
+P^t(x, y) - P^t(z, y))| \\
+\leq \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) |\sum_{x \in \Omega}\mu(x)
+P^t(x, y) - P^t(z, y)| \\
+= \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) |\sum_{x \in \Omega}\mu(x)
+(P^t(x, y) - P^t(z, y))| \\
+\leq \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) \sum_{x \in \Omega}\mu(x)
+|(P^t(x, y) - P^t(z, y))| \\
+= \sum_{x \in \Omega} \mu(x) \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) 
+|(P^t(x, y) - P^t(z, y))| \\
+\end{multline*}
+
+To maximize this, take the $x$ such that 
+
+\end{document}
