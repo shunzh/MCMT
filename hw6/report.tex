@@ -17,23 +17,18 @@
 
 \section*{Exercise 6.1}
 
-\begin{multline*}
-2 ||\mu P^t - \pi||_{TV} 
+$2 ||\mu P^t - \pi||_{TV} 
 = \sum_{y \in \Omega} |\mu P^t(y) - \pi (y)| \\
-= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \sum_{z \in
-\Omega}\pi (z) P^t(z, y)| \\
-= \sum_{y \in \Omega} |\sum_{z \in \Omega}\pi (z) (\sum_{x \in \Omega}\mu(x)
-P^t(x, y) - P^t(z, y))| \\
-\leq \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) |\sum_{x \in \Omega}\mu(x)
-P^t(x, y) - P^t(z, y)| \\
-= \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) |\sum_{x \in \Omega}\mu(x)
-(P^t(x, y) - P^t(z, y))| \\
-\leq \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) \sum_{x \in \Omega}\mu(x)
-|(P^t(x, y) - P^t(z, y))| \\
-= \sum_{x \in \Omega} \mu(x) \sum_{y \in \Omega} \sum_{z \in \Omega}\pi (z) 
-|(P^t(x, y) - P^t(z, y))| \\
-\end{multline*}
+= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \pi(y)| \\
+= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \sum_{x \in
+\Omega}\mu(x) \pi(y)| \\
+= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) (P^t(x, y) - \pi(y))| \\
+\leq \sum_{y \in \Omega} \sum_{x \in \Omega}\mu(x) |P^t(x, y) - \pi(y)| \\
+= \sum_{x \in \Omega}\mu(x) 2||P^t(x, \cdot) - \pi||_{TV} \\
+\leq sup_x 2||P^t(x, \cdot) - \pi||_{TV}
+$
 
-To maximize this, take the $x$ such that 
+In the last step, let $\mu = \delta_x$ so that $2||P^t(x, \cdot) - \pi||_{TV}$
+is maximized. Thefore, $sup_\mu ||\mu P^t - \pi||_{TV} = d(t)$.
 
 \end{document}
