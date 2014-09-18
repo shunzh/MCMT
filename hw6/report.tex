@@ -8,7 +8,7 @@
 
 \renewcommand{\P}{\mathbb{P}}
 
-\title{MCMT Homework 5}
+\title{MCMT Homework 6}
 \author{Shun Zhang}
 \date{}
 
@@ -18,17 +18,50 @@
 \section*{Exercise 6.1}
 
 $2 ||\mu P^t - \pi||_{TV} 
-= \sum_{y \in \Omega} |\mu P^t(y) - \pi (y)| \\
+= \sum_{y \in \Omega} |(\mu P^t)(y) - \pi (y)| \\
 = \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \pi(y)| \\
 = \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \sum_{x \in
 \Omega}\mu(x) \pi(y)| \\
 = \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) (P^t(x, y) - \pi(y))| \\
 \leq \sum_{y \in \Omega} \sum_{x \in \Omega}\mu(x) |P^t(x, y) - \pi(y)| \\
 = \sum_{x \in \Omega}\mu(x) 2||P^t(x, \cdot) - \pi||_{TV} \\
-\leq sup_x 2||P^t(x, \cdot) - \pi||_{TV}
+\leq \sup_{x \in \Omega} 2||P^t(x, \cdot) - \pi||_{TV} \\
 $
 
-In the last step, let $\mu = \delta_x$ so that $2||P^t(x, \cdot) - \pi||_{TV}$
-is maximized. Thefore, $sup_\mu ||\mu P^t - \pi||_{TV} = d(t)$.
+In the last step, we know $\mu(x)$ sums to 1 for $x \in \Omega$. So to maximize
+it, let $\mu = \delta_x$ so that $2||P^t(x, \cdot) - \pi||_{TV}$ is maximized.
+Therefore, $\sup_\mu ||\mu P^t - \pi||_{TV} = d(t)$.
+\\
+
+$2 ||\mu P^t - \nu P^t||_{TV} 
+= \sum_{y \in \Omega} |(\mu P^t)(y) - (\nu P^t)(y)| \\
+= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) P^t(x, y) - \sum_{z \in
+\Omega}\nu (z) P^t(z, y)| \\
+= \sum_{y \in \Omega} |\sum_{x \in \Omega}\mu(x) \sum_{z \in \Omega}\nu (z) (
+P^t(x, y) - P^t(z, y))| \\
+\leq \sum_{y \in \Omega} \sum_{x \in \Omega}\mu(x) \sum_{z \in \Omega}\nu (z) |
+P^t(x, y) - P^t(z, y)| \\
+= \sum_{x \in \Omega}\mu(x) \sum_{z \in \Omega}\nu (z) 2|| P^t(x, \cdot) -
+P^t(z, \cdot)||_{TV} \\
+\leq \sup_{x, z \in \Omega} 2|| P^t(x, \cdot) - P^t(z, \cdot)||_{TV} \\
+$
+
+The last step is similar to the reasoning to the previous proof. We choose
+$\mu = \delta_x, \nu = \delta_z$ so that $2|| P^t(x, \cdot) - P^t(z,
+\cdot)||_{TV}$ is maximized.
+Therefore,  $\sup_{\mu, \nu} ||\mu P^t - \nu P^t||_{TV} = \bar{d}(t)$.
+
+\section*{Exercise 6.2}
+
+$2 ||\mu P - \nu P||_{TV} 
+= \sum_{y \in \Omega} |(\mu P)(y) - (\nu P)(y)| \\
+= \sum_{y \in \Omega} |\sum_{x \in \Omega} (\mu(x) P(x, y) - \nu(x) P(x, y))| \\
+\leq \sum_{y \in \Omega} \sum_{x \in \Omega} |\mu(x) P(x, y) - \nu(x) P(x, y)| \\
+= \sum_{y \in \Omega} \sum_{x \in \Omega} P(x, y) |\mu(x) - \nu(x)| \\
+= \sum_{x \in \Omega} |\mu(x) - \nu(x)| \\
+= 2 ||\mu - \nu||_{TV} \\
+$
+
+So $||\mu P - \nu P||_{TV} \leq ||\mu - \nu||_{TV}$.
 
 \end{document}
