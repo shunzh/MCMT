@@ -58,10 +58,17 @@ $2 ||\mu P - \nu P||_{TV}
 = \sum_{y \in \Omega} |\sum_{x \in \Omega} (\mu(x) P(x, y) - \nu(x) P(x, y))| \\
 \leq \sum_{y \in \Omega} \sum_{x \in \Omega} |\mu(x) P(x, y) - \nu(x) P(x, y)| \\
 = \sum_{y \in \Omega} \sum_{x \in \Omega} P(x, y) |\mu(x) - \nu(x)| \\
-= \sum_{x \in \Omega} |\mu(x) - \nu(x)| \\
+= \sum_{x \in \Omega} |\mu(x) - \nu(x)| \hfill \sum_{y \in \Omega} P(x, y) = 1  \\
 = 2 ||\mu - \nu||_{TV} \\
 $
 
-So $||\mu P - \nu P||_{TV} \leq ||\mu - \nu||_{TV}$.
+So $||\mu P - \nu P||_{TV} \leq ||\mu - \nu||_{TV}$. We have $||\mu P^{t+1} -
+\nu P^{t+1}||_{TV} \leq ||\mu P^t - \nu P^t||_{TV}$ by substituting $\mu, \nu$
+in the proof above by $\mu P^t, \nu P^t$, respectively.  So we have $\bar{d}(t +
+1) \leq \bar{d}(t)$.
+
+We have $||\mu P^{t+1} - \pi||_{TV} \leq ||\mu P^t - \pi||_{TV}$ by
+substituting $\mu, \nu$ in the proof above by $\mu P^t, \pi$, respectively. Note
+that $\pi P = \pi$.  So we have $\bar{d}(t + 1) \leq \bar{d}(t)$.
 
 \end{document}
