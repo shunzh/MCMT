@@ -1,0 +1,60 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+
+\renewcommand{\P}{\mathbb{P}}
+
+\title{MCMT Homework 7}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 7.1}
+
+For any state $x$, 
+$\sum_{y \in \Omega} \hat{P}(x, y)
+= \dfrac{\sum_{y \in \Omega} \pi(y) P(y, x)}{\pi(x)}
+= \dfrac{\pi(x)}{\pi(x)}
+= 1
+$.
+We know $\pi, P$ are all non-negative. Multiplicaiton is closed for non-negative
+numbers, so $\hat{P}$ is non-negative.
+
+So $\hat{P}$ is a stochastic matrix.
+
+\section*{Exercise 7.2}
+
+Show $\hat{P}^n (n, \cdot) = \pi$ by induction on the number of states in the
+Markov Chain, which is $n+1$ (from 0 to n).
+
+Base case: when $n = 0$, the Markov Chain has 1 state. $\hat{P}^0 (0, \cdot) =
+\delta_0$. This is the stationary distribution.
+
+Inductive step: assume that $\hat{P}^n (n, \cdot) = \pi$ for some $n \geq 0$.
+Consider a transition matrix $Q$ on a Markov chain with $n+2$ states.
+$Q^n(n+1, \cdot) = \pi'$ by induction hypothesis, where $\pi'$ is the stationary
+distribution for the Markov chain of the states $1, 2, \cdots, n+1$.
+
+Consider $Q^{n+1}(n+1, \cdot)$, which is $Q^{n}(n+1, \cdot) Q$.
+
+$Q^{n+1}(n+1, 0) = Q^{n}(n+1, 1) Q(1, 0) = \dfrac{1}{2} 1 = \dfrac{1}{2}$.
+
+$Q^{n+1}(n+1, 1) = Q^{n}(n+1, 2) Q(2, 1) = \dfrac{1}{2^2} 1 = \dfrac{1}{2^2}$.
+
+$\cdots$
+
+$Q^{n+1}(n+1, n) = Q^{n}(n+1, n+1) Q(n+1, n) = \dfrac{1}{2^{n+1}} 1 =
+\dfrac{1}{2^{n+1}}$.
+
+$Q^{n+1}(n+1, n+1) = Q^{n}(n+1, n+1) Q(n+1, n+1) = \dfrac{1}{2^{n+1}} 1 =
+\dfrac{1}{2^{n+1}}$.
+
+This is the stationary distribution for the Markov chain with $n+2$ states.
+
+\end{document}
