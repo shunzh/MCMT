@@ -17,4 +17,34 @@
 
 \section*{Exercise 8.1}
 
+For any non-negative constant $c$, define $\{\tau \leq t\} = 1_{|(X_0, \cdots,
+X_t)| = c}$.  Then $\tau = c$ is a stopping time.
+
+Suppose there are two stopping times $\tau_1$ and $\tau_2$.
+We can make $\{X_0, \cdots, X_s\}$ satisfy $\{\tau_1 \leq s\}$ and $\{X_{s},
+\cdots, X_t\}$ satisfy $\{\tau_2 \leq t - s\}$.
+That is, $\{\tau_1 + \tau_2 \leq t\} = \{\tau_1 \leq s\} \land \{\tau_2 \leq t -
+s, X_0 = y\}$, where $y$ is the state when $\{\tau_1 \leq s\}$ is true.
+So $\tau_1 + \tau_2$ is a stopping time.
+
+\section*{Exercise 8.2}
+
+Consider a Markov chain of three states. $x_1$ represents one complete graph
+except the shared vertex. $x_2$ represents the other complete graph except the
+shared vertex. $x_3$ is the shared vertex. Then $P(x_1, x_3) = \dfrac{1}{2n-1}$.
+
+Start with $\delta_1$ (which means starting with arbitrary distribution that
+only covers the first complete graph except the shared vertex in the original
+graph).
+
+$\P(X_t = x_1) \geq (1 - \dfrac{1}{2n-1})^t \geq 1 - \dfrac{t}{2n-1}$.
+As $\pi(x_1) < \dfrac{1}{2}$, we want $\P(X_t = x_1) < \dfrac{1}{2} +
+\dfrac{1}{4}$ for $t = t_{mix}$.
+
+So $1 - \dfrac{t}{2n-1} < \dfrac{1}{2} + \dfrac{1}{4} = \dfrac{3}{4}$,
+$\dfrac{t}{2n-1} > \dfrac{1}{4}$,
+$t > \dfrac{n}{2}$.
+
+That is, $t_{mix} > \dfrac{2}{n}$.
+
 \end{document}
