@@ -31,13 +31,13 @@ So $\hat{P}$ is a stochastic matrix.
 \section*{Exercise 7.2}
 
 Show $\hat{P}^n (n, \cdot) = \pi$ by induction on the number of states in the
-Markov Chain, which is $n+1$ (from 0 to n).
+time reversal of winning streat chain, which is $n+1$ (from 0 to n).
 
-Base case: when $n = 0$, the Markov Chain has 1 state. $\hat{P}^0 (0, \cdot) =
+Base case: when $n = 0$, the chain has 1 state. $\hat{P}^0 (0, \cdot) =
 \delta_0$. This is the stationary distribution.
 
 Inductive step: assume that $\hat{P}^n (n, \cdot) = \pi$ for some $n \geq 0$.
-Consider a transition matrix $Q$ on a Markov chain with $n+2$ states.
+Consider a transition matrix $Q$ on a chain with $n+2$ states.
  
 $$Q^n(n+1, m) = \left\{
 \begin{array}{l l}
@@ -46,7 +46,7 @@ $$Q^n(n+1, m) = \left\{
 \end{array}
 \right.
 $$
-by induction hypothesis.
+by induction hypothesis. Here $\pi$ is for $\hat{P}$.
 
 Consider $Q^{n+1}(n+1, \cdot)$, which is $Q^{n}(n+1, \cdot) Q$.
 
