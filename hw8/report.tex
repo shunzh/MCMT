@@ -17,4 +17,14 @@
 
 \section*{Exercise 8.1}
 
+For any non-negative constant $c$, define $\{\tau \leq t\} = 1_{|\{X_0, \cdots,
+X_t\}| = c}$.  Then $\tau = c$ is a stopping time.
+
+Suppose there are two stopping times $\tau_1$ and $\tau_2$.
+We can make $\{X_0, \cdots, X_s\}$ satisfy $\{s \leq \tau_1\}$ and $\{X_{s},
+\cdots, X_t\}$ satisfy $\{t - s \leq \tau_2\}$.
+That is, $\{\tau_1 + \tau_2 \leq t\} = \{\tau_1 \leq s\} \land \{\tau_2 \leq t -
+s, X_0 = y\}$, where $y$ is the state when $\{\tau_1 \leq s\}$ is true.
+So $\tau_1 + \tau_2$ is a stopping time.
+
 \end{document}
