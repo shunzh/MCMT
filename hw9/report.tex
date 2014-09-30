@@ -1,0 +1,44 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+
+\title{MCMT Homework 9}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 9.1}
+
+Let $Y_t$ denote the number of coordinates that have been selected after $t$ rounds.
+Define the distinguishing statistic $f:\{0,1\}^n \rightarrow R$ by
+$f(x)=\sum_{i=1}^n x_i$.
+
+\begin{enumerate}
+
+\item The probability that one coordinate is not selected in $t$ steps is $p = (1 -
+\frac{1}{n})^t$. The expectation of the number of coordinates that are not
+selected in $t$ steps is $\E(n - Y_t) = np = n(1 - \frac{1}{n})^t$. So $\E(Y_t) =
+n - n(1 - \frac{1}{n})^t$.
+
+\item Let $I_i(t)$ be the indicator that $i$-th coordinate has been selected at
+$t$-th step.\\
+$\E(I_i(t) I_j(t)) = 2(1 - (1 - \frac{1}{n})^t) - (1 - (1 - \frac{2}{n})^t) = 1
+- 2(1 - \frac{1}{n})^t + (1 - \frac{2}{n})^t$.\\
+$\E(I_i(t))E(I_j(t)) = (1 - (1 - \frac{1}{n})^t)^2$.\\
+$\Cov(I_i(t), I_j(t)) = \E(I_i(t) I_j(t)) - \E(I_i(t))E(I_j(t)) = (1 -
+\frac{2}{n})^t - (1 - \frac{1}{n})^t \leq 0$.
+
+\end{enumerate}
+
+\end{document}
