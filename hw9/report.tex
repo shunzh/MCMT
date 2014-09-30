@@ -39,19 +39,31 @@ $t$-th step.
 $\E(I_i(t) I_j(t)) = 2(1 - (1 - \frac{1}{n})^t) - (1 - (1 - \frac{2}{n})^t) = 1
 - 2(1 - \frac{1}{n})^t + (1 - \frac{2}{n})^t$.
 
-$\E(I_i(t))E(I_j(t)) = (1 - (1 - \frac{1}{n})^t)^2$.
+$\E(I_i(t))\E(I_j(t)) = (1 - (1 - \frac{1}{n})^t)^2$.
 
-$\Cov(I_i(t), I_j(t)) = \E(I_i(t) I_j(t)) - \E(I_i(t))E(I_j(t)) = (1 -
+$\Cov(I_i(t), I_j(t)) = \E(I_i(t) I_j(t)) - \E(I_i(t))\E(I_j(t)) = (1 -
 \frac{2}{n})^t - (1 - \frac{1}{n})^t \leq 0$.
 
 $\Var(Y_t) = \Var(\sum_i I_i(t)) = \sum_i(\Var (I_i(t))) + \sum_{i \neq
 j}\Cov(I_i(t), I_j(t)) \leq \sum_i(\Var (I_i(t))) \leq n p(1-p) \leq \frac{n}{4}$.
 
 %3.
-\item $E_0(X_{ti} | Y_t) = \frac{Y_t}{n} \frac{1}{2}$. This is the probability
-that $x_i$ is chosen times the probability that it is set to be 1.
+\item $\E_0(X_{ti} | Y_t) = \frac{Y_t}{n} \frac{1}{2}$. This is the probability
+that $x_i$ is chosen, and times the probability that it is set to be 1.
 
-$E_0(f(X_t) | Y_t) = \sum_i E_0(X_{ti} | Y_t) = \frac{Y_t}{2}$.
+$\E_0(f(X_t) | Y_t) = \sum_i \E_0(X_{ti} | Y_t) = \frac{Y_t}{2}$.
+
+$\E_0(f(X_t)) = \sum_y \E_0(f(X_t) | Y_t) P(Y_t) = \sum_y \frac{Y_t}{2} P(Y_t) =
+\frac{\E(Y_t)}{2}$.
+
+%4.
+\item
+$\E_0 \Var_0(f(X_t) | Y_t) = $.
+
+$\E_0(f(X_t) | Y_t) = \frac{Y_t}{2}$.
+$\Var_0 \E_0(f(X_t) | Y_t) = \Var_0 \frac{Y_t}{2} \leq $.
+
+$\Var_0(f(X_t)) = \E_0 \Var_0(f(X_t) | Y_t) + \Var_0 (\E_0(f(X_t) | Y_t))$.
 
 \end{enumerate}
 
