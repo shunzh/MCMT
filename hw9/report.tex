@@ -42,7 +42,7 @@ $\E(I_i(t) I_j(t)) = 2(1 - (1 - \frac{1}{n})^t) - (1 - (1 - \frac{2}{n})^t) = 1
 $\E(I_i(t))\E(I_j(t)) = (1 - (1 - \frac{1}{n})^t)^2$.
 
 $\Cov(I_i(t), I_j(t)) = \E(I_i(t) I_j(t)) - \E(I_i(t))\E(I_j(t)) = (1 -
-\frac{2}{n})^t - (1 - \frac{1}{n})^t \leq 0$.
+\frac{2}{n})^t - (1 - \frac{1}{n})^{2t} \leq 0$.
 
 $\Var(Y_t) = \Var(\sum_i I_i(t)) = \sum_i(\Var (I_i(t))) + \sum_{i \neq
 j}\Cov(I_i(t), I_j(t)) \leq \sum_i(\Var (I_i(t))) \leq n p(1-p) \leq \frac{n}{4}$.
@@ -53,17 +53,35 @@ that $x_i$ is chosen, and times the probability that it is set to be 1.
 
 $\E_0(f(X_t) | Y_t) = \sum_i \E_0(X_{ti} | Y_t) = \frac{Y_t}{2}$.
 
-$\E_0(f(X_t)) = \sum_y \E_0(f(X_t) | Y_t) P(Y_t) = \sum_y \frac{Y_t}{2} P(Y_t) =
-\frac{\E(Y_t)}{2}$.
+$\E_0(f(X_t)) = \sum_y \E_0(f(X_t) | Y_t = y) P(Y_t = y) = \sum_y \frac{y}{2}
+P(Y_t = y) = \frac{\E(Y_t)}{2}$.
 
 %4.
 \item
-$\E_0 \Var_0(f(X_t) | Y_t) = $.
+$\Var_0(f(X_t) | Y_t) = Y_t \frac{1}{2} (1 - \frac{1}{2}) = \frac{1}{4} Y_t$, as
+$f(X_t)$ given $Y_t$ is a Binomial distribution.
+$\E_0 \Var_0(f(X_t) | Y_t) = \frac{1}{4} \E_0(Y_t)$.
 
 $\E_0(f(X_t) | Y_t) = \frac{Y_t}{2}$.
-$\Var_0 \E_0(f(X_t) | Y_t) = \Var_0 \frac{Y_t}{2} \leq $.
+$\Var_0 \E_0(f(X_t) | Y_t) = \Var_0 \frac{Y_t}{2} = \frac{1}{4} \Var_0 (Y_t)$.
 
-$\Var_0(f(X_t)) = \E_0 \Var_0(f(X_t) | Y_t) + \Var_0 (\E_0(f(X_t) | Y_t))$.
+$\Var_0(f(X_t)) = \E_0 \Var_0(f(X_t) | Y_t) + \Var_0 (\E_0(f(X_t) | Y_t)) =
+\frac{1}{4} (\E (Y_t) + \Var (Y_t))$.
+
+By substituting by the results we have,
+$\E (Y_t) + \Var (Y_t)
+= n - n(1 - \frac{1}{n})^t + (n^2 - n) cov + n (1 - \frac{1}{n})^t (1 - (1 -
+\frac{1}{n})^t)
+= n + (n^2 - n) cov - n (1 - \frac{1}{n})^t
+< n
+$
+, where $cov$ is $\Cov(I_i(t), I_j(t))$ for $i \neq j$, which we have shown to
+be negative.
+
+So $\Var_0(f(X_t)) < \frac{1}{4} n$.
+
+%5.
+\item 
 
 \end{enumerate}
 
