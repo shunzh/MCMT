@@ -99,15 +99,19 @@ $||P^t(0, \cdot) - \pi||_{TV}
 \geq 1 - \dfrac{n}{n + \frac{n^2(1-\frac{1}{n})^{2t}}{4}}
 = 1 - 8 \dfrac{1}{8 + 2n(1-\frac{1}{n})^{2t}}
 = 1 - 8 \exp\{-\log(8 + 2n(1-\frac{1}{n})^{2t})\}
-$
+$.
 
 We know $d(t) \geq ||P^t(0, \cdot) - \pi||_{TV}$. Let $t =
 \frac{1}{2}n\log n - cn$.
 
-$d(\frac{1}{2}n\log n - cn)
+$d(\frac{1}{2}n\log n - cn)\\
 \geq 1 - 8 \exp\{-\log(8 + 2n(1-\frac{1}{n})^{n\log n - 2cn})\}\\
+\geq 1 - 8 \exp\{-\log 2n -\log((1-\frac{1}{n})^{n\log n - 2cn})\}\\
+= 1 - 8 \exp\{-\log 2n -({n\log n - 2cn})\log(1-\frac{1}{n})\}\\
+\geq 1 - 8 \exp\{-\log 2n -({n\log n - 2cn})(-\log 2 - \frac{1}{n})\}\\
+\geq 1 - 8 \exp\{- 2c - O(n \log n)\}\\
 \geq 1 - 8 \exp\{- 2c + 1\}
-$
+$.
 
 \end{enumerate}
 
