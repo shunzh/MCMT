@@ -85,16 +85,28 @@ So, $\Var_0(f(X_t)) < \frac{1}{4} n$.
 $\Var_\pi f = n \frac{1}{2} (1 - \frac{1}{2}) = \frac{n}{4}$.
 
 %6.
-\item Consider two distributions $\delta_0$ and $\pi$.
+\item Consider two distributions $P^t(0, \cdot)$ and $\pi$.
+
 $\sigma^2 \leq (\frac{n}{4} + \frac{n}{4}) / 2 = \frac{n}{4}$.
-$\Delta = |\frac{EY_t}{2} - \frac{n}{2}| = \frac{n - EY_t}{2}$.
+
+$\Delta = |\frac{EY_t}{2} - \frac{n}{2}| = \dfrac{n - EY_t}{2} =
+\dfrac{n(1-\frac{1}{n})^t}{2}$.
 
 By Lemma 9.7, 
-$||\delta_0 - \pi||_{TV}
+$||P^t(0, \cdot) - \pi||_{TV}
 \geq \dfrac{\Delta^2}{4 \sigma^2 + \Delta^2}
 = 1 - \dfrac{4 \sigma^2}{4 \sigma^2 + \Delta^2}
-\geq 1 - \dfrac{n}{n + }
-\geq \dfrac{(\frac{n - EY_t}{2})^2}{n + (\frac{n - EY_t}{2})^2}
+\geq 1 - \dfrac{n}{n + \frac{n^2(1-\frac{1}{n})^{2t}}{4}}
+= 1 - 8 \dfrac{1}{8 + 2n(1-\frac{1}{n})^{2t}}
+= 1 - 8 \exp\{-\log(8 + 2n(1-\frac{1}{n})^{2t})\}
+$
+
+We know $d(t) \geq ||P^t(0, \cdot) - \pi||_{TV}$. Let $t =
+\frac{1}{2}n\log n - cn$.
+
+$d(\frac{1}{2}n\log n - cn)
+\geq 1 - 8 \exp\{-\log(8 + 2n(1-\frac{1}{n})^{n\log n - 2cn})\}\\
+\geq 1 - 8 \exp\{- 2c + 1\}
 $
 
 \end{enumerate}
