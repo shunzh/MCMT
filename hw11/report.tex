@@ -19,12 +19,23 @@
 \maketitle
 
 \section*{Exercise 11.1}
-Number of cases that the last card is from the left hand: ${n \choose m} - {n-1
-\choose m} = {n-1 \choose m-1}$.
 
-Number of cases that the last card is from the right hand: ${n-1 \choose m}$.
+Suppose there are $n$ cards in total and $m$ cards in the left hand. Consider
+the next card to be dropped from the bottom of left-right deck or the right-hand
+deck.
 
-The ratio of probability of the last card being from the left hand versus the
+Following the first model, the number of cases that the next card is from the
+left hand is ${n \choose m} - {n-1 \choose m} = {n-1 \choose m-1}$.
+The number of cases that the next card is from the right hand: ${n-1 \choose
+m}$.
+The ratio of probability of the next card being from the left hand versus the
 right hand is ${n-1 \choose m-1} / {n-1 \choose m} = m / (n - m)$.
+
+Following the second model, the ratio of probability of the next card being from
+the left hand versus the right hand is $\frac{m}{n} / \frac{n-m}{n} = m / (n -
+m)$.
+
+So they have the same probability distribution on the next card to be dropped.
+This is applied to each step. So these two characterizations are equivalent.
 
 \end{document}
