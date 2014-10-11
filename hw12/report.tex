@@ -1,0 +1,54 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+\usepackage{enumerate}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+
+\title{MCMT Homework 12}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 12.1}
+$\theta(x, y) = -\theta(y, x)$ for every x, y, so $\sum_x \sum_{y \sim x}
+\theta(x, y) = 0$. We know for every $x \not\in \{a,z\}$, $\sum_{y \sim x}
+\theta(x,y)=0$. So $\sum_{x \in \{a, z\}} \sum_{y \sim x} \theta(x, y) = 0$. 
+$\sum_{y \sim a} \theta(a,y)= -\sum_{y \sim z} \theta(z,y)$.
+
+\section*{Exercise 12.2}
+Let $\theta$ be the unit current flow of the original graph.
+
+\begin{enumerate}[(a)]
+\item
+$\sum_{y \sim u} \theta(u, y) =
+\sum_{y \sim u} c(u, y) (\phi(u) - \phi(y)) =
+\sum_{y \sim u} c(u, y) (\phi(u) - \phi(y)) =
+(c(e_1) + c(e_2)) (\phi(u) - \phi(v)) + \sum_{y \sim u \setminus \{e_1, e_2\}}
+c(u, y) (\phi(u) - \phi(y)) = 0
+$.
+
+Delete $e_2$ and replace $c(e_1)$ with $c(e_1)+c(e_2)$. The equation above is
+not changed. As $c$ is unchanged for other edges, $\phi$ is the same. By the
+definition of $R(a, z) = \phi(a) - \phi(z)$, $R(a, z)$ is the same.
+
+\item
+By Kirchoff’s node law, $\theta(v, u) = - \theta(v, w)$. So $\theta(u, v) =
+\theta(v, w)$.
+
+$\phi(u) - \phi(w) = (\phi(u) - \phi(v)) + (\phi(v) - \phi(w)) = \theta(u, v)
+R(u, v) + \theta(v, w) R(v, w) = \theta(u, v) (R(u, v) + R(v, w))$.
+
+Replace $R(u, v) + R(v, w)$ with $R(u, w)$, $\phi(u) - \phi(w)$ is the same.
+Same as the reasoning in previous question, $R(a, z)$ is the same.
+\end{enumerate}
+\end{document}
