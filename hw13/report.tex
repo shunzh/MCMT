@@ -27,18 +27,13 @@ Exercise 12.2.
 
 \section*{Exercise 13.2}
 
-Before gluing: $R(a, z) = \inf_\theta E(\theta)$
+Let $\theta$ be unit current.
 
-s.t. $||\theta|| = 1,
-\sum_y \theta(v_1, y) = 0,
-\sum_y \theta(v_2, y) = 0
-$.
+Before gluing: $R(a, z) = \inf_\theta E(\theta)$,
+s.t. $\sum_y \theta(v_1, y) = 0, \sum_y \theta(v_2, y) = 0$.
 
-After gluing:  $R'(a, z) = \inf_\theta E(\theta)$
-
-s.t. $||\theta|| = 1,
-\sum_y \theta(v_1, y) + \sum_y \theta(v_2, y) = 0
-$.
+After gluing:  $R'(a, z) = \inf_\theta E(\theta)$,
+s.t. $\sum_y \theta(v_1, y) + \sum_y \theta(v_2, y) = 0$.
 
 They have the same objective function, but $R'(a, z)$ has a relaxed constraint.
 So $R(a, z) \geq R'(a, z)$.
@@ -46,7 +41,7 @@ So $R(a, z) \geq R'(a, z)$.
 \hfill
 
 Assume there is an edge between $v_1$ and $v_2$ with $r = \inf$. After gluing,
-the resistance is $0$, and $\phi(v_1) = \phi(v_2)$, the new resistance is
-smaller. 
+the resistance is $0$, and $\phi(v_1) = \phi(v_2)$.  Corollary 13.4, the new
+resistance is smaller as $\phi$ has changed.
 
 \end{document}
