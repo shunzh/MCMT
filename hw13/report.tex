@@ -1,0 +1,52 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+\usepackage{enumerate}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+
+\setlength\parindent{0pt}
+
+\title{MCMT Homework 13}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 13.1}
+
+Exercise 12.2.
+
+\section*{Exercise 13.2}
+
+Before gluing: $R(a, z) = \inf_\theta E(\theta)$
+
+s.t. $||\theta|| = 1,
+\sum_y \theta(v_1, y) = 0,
+\sum_y \theta(v_2, y) = 0
+$.
+
+After gluing:  $R'(a, z) = \inf_\theta E(\theta)$
+
+s.t. $||\theta|| = 1,
+\sum_y \theta(v_1, y) + \sum_y \theta(v_2, y) = 0
+$.
+
+They have the same objective function, but $R'(a, z)$ has a relaxed constraint.
+So $R(a, z) \geq R'(a, z)$.
+
+\hfill
+
+Assume there is an edge between $v_1$ and $v_2$ with $r = \inf$. After gluing,
+the resistance is $0$, and $\phi(v_1) = \phi(v_2)$, the new resistance is
+smaller. 
+
+\end{document}
