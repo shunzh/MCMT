@@ -1,0 +1,56 @@
+\documentclass[10pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb} 
+\usepackage{enumerate}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+
+\setlength\parindent{0pt}
+
+\title{MCMT Homework 16}
+\author{Shun Zhang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 16.1}
+
+Assume G is transient. For a vertex $a$, there exists a flow from $a$ to
+inifinity with finite energy. Consider its k-fuzz graph, we just set the
+flow on the additional edges to be 0. Then the new flow is a finite flow for the
+k-fuzz graph.
+
+\hfill
+
+If the k-fuzz of a graph is transient. Consider deriving the original graph $G$ by
+removing edges. Consider an edge $e'$ in k-fuzz that connects two vertices with
+distance of $k$.  Let the path in G that connects these two vertices be $e_1,
+e_2, \cdots, e_k$.  By removing $e'$, let $\theta(e')$ go through $e_1, e_2,
+\cdots, e_k$ instead.
+
+All the edges have unit conductances. So the energy before removing $e'$ is
+$\sum_{i=1}^k \theta(e_i)^2 + \theta(e')^2$. The energy after removing $e'$ is 
+$\sum_{i=1}^k (\theta(e_i) + \theta(e'))^2\\
+= \sum_{i=1}^k \theta(e_i)^2 + 2 \sum_{i=1}^k \theta(e_i) \theta(e') + k
+\theta(e')^2\\
+\leq \sum_{i=1}^k \theta(e_i)^2 + \sum_{i=1}^k (\theta(e_i)^2 + \theta(e')^2) +
+k \theta(e')^2\\
+\leq 2k (\sum_{i=1}^k \theta(e_i)^2 + \theta(e')^2)
+$.
+
+So the energy increment by removing one edge in k-fuzz graph can be locally
+finitelly bounded.  For any original edge in G, its energy can be augemented at
+most $(\Delta^{k+1})^2$ times, where $\Delta^{k+1}$ upper bounds the number of
+the nodes in a tree with depth of $k$ and branching factor of $\Delta$. So the
+energy of the flow can be increased at most $(2k)^{(\Delta^{k+1})^2}$ times
+(which is a loose upper bound), which is still finite.
+
+\end{document}
