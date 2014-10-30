@@ -33,7 +33,25 @@ So $\lambda \leq 1$.
 \item It is proved that the nullity of $P - I$ is 1. $(1,1,\
 \cdots,1)^T$ is a solution to $Pv = v$, so it is the unique solution.
 
-\item 
+\item Suppose that $Pv=-v$. Let $v=v^+ - v^-$ where $v^+$ and $v^-$ have
+non-negative coordinates and disjoint support.
+
+Because $P$ perserves the sum of components of $v$, so
+
+$\sum P v^+ = \sum v^+\\
+\sum P v^- = \sum v^-\\
+\sum P v = \sum v \Rightarrow \sum P(v^+ - v^-) = \sum (v^- - v^+)
+$.
+
+By these linear equations, we have $\sum v^+ = \sum v^-$.
+
+Because $P(v^+ - v^-) = v^- - v^+$, where $P v^+, P v^-, v^+, v^-$ are all
+nonnegative vectors. $\sum P v^+ = \sum P v^- = \sum v^+ = \sum v^-$. We have $P
+v^+ = v^-, P v^- = v^+$.
+
+For a state $x$ in the support of $v^+$, we know $P(x, x) = 0$ because $Pv^+ =
+v^-$. Because $P^{2k+1}v^+ = v^-$, $P^{2k + 1}(x, x) = 0$. As the transition
+matrix is irreducible, the period must be a multiple of 2.
 
 \end{enumerate}
 
